@@ -1,14 +1,19 @@
 {
   "name": "openai-vocabulary-builder",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "vite -c vite.config.js",
+    "build": "vite build -c vite.config.js && vite build -c vite.content.config.js && vite build -c vite.background.config.js && node build.js",
+    "preview": "vite preview -c vite.config.js"
   },
   "dependencies": {
-    "vue": "^3.3.4"
+    "@element-plus/icons-vue": "^2.1.0",
+    "element-plus": "^2.3.14",
+    "marked": "^9.1.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.3.4",

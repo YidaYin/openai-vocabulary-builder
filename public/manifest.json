@@ -1,0 +1,29 @@
+{
+  "name": "OpenAI Vocabulary Builder",
+  "version": "0.1",
+  "manifest_version": 3,
+  "description": "Your AI-powered companion for expanding and mastering vocabulary with ease.",
+  "icons": {
+    "16": "images/panda.png",
+    "32": "images/panda.png",
+    "48": "images/panda.png",
+    "128": "images/panda.png"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html"
+  },
+  "side_panel": {
+    "default_path": "src/sidepanel/sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "all_frames": true,
+      "js": ["content-script.js"]
+    }
+  ],
+  "permissions": ["sidePanel", "contextMenus", "storage"]
+}
